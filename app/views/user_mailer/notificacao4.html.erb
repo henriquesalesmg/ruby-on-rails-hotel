@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <div class="container">
+      <p>Olá!</p>
+      <p>Prezado(a) <b><%= @user.nome %></b>, você realizou a solicitação de uma reserva no <b>Hotel Pousada Juliano</b>.</p>
+      <p>Seus dados foram recebidos com sucesso em nosso sistema! Imediatamente entraremos em contato para confirmar a sua reserva.</p>
+
+      <br>
+      <p>Poderemos entrar em contato através do seguinte telefone: <%= @user.telefone %> ou <%= @user.celular %>.</p>
+
+      <h3>Número de pessoas: <%= @user.quantidade %> <br>
+      <h3>Chegada: <%= @user.chekin %> <br>
+      <h3>Saída: <%= @user.checkout %> <br>
+      <p></p>
+    </div>
+  </body>
+</html>

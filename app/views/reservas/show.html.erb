@@ -1,0 +1,14 @@
+
+<div class="container" id="show">
+<p id="notice"><%= notice %></p>
+<center>
+<p>
+  Olá <b><%= @reserva.nome %></b>.<br>
+  Sua reserva foi recebida com sucesso!<br><br>
+  Entraremos em contato através do e-mail <%= @reserva.nome %> ou pelo
+  telefone <%= @reserva.celular %>.
+</p>
+<%= link_to 'Página Inicial', home_index_path, class: 'btn' %>
+</center>
+
+</div>

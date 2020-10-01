@@ -1,0 +1,96 @@
+
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+    <ul class="nospace">
+      <li><i class="fa fa-envelope-o"></i> 
+      <a href="mailto:contato@hotelpousadajuliano.com.br" target="_top" id="link-rodape">
+        contato@hotelpousadajuliano.com.br
+      </a>
+      </li>
+      <li><a href="index.html"><i class="fa fa-lg fa-home"></i></a></li>
+      <li><a href="tel:+553138711394"><i class="fa fa-life-bouy"></i></a></li>
+      <%#
+        <li><a href="#" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
+        <li><a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
+      %>
+    </ul>
+  </div>
+</div>
+
+
+<div class="wrapper row1">
+  <header id="header" class="hoc clear">
+    <section> 
+      <div><i class="fa fa-phone"></i> 
+        <a href="tel:+553138711394">
+          (31) 3871-1394 
+        </a>
+
+      </div>
+      <div>
+        <h1 id="logo"><%= link_to home_index_path do %><%= image_tag "logo.png", :class =>'img-responsive super' %><% end  %></h1>
+      </div>
+      <div>
+        <%#
+          <form class="clear" method="post" action="#">
+            <fieldset>
+              <legend>Search:</legend>
+              <input type="search" value="" placeholder="Search Here&hellip;">
+              <button class="fa fa-search" type="submit" title="Search"><em>Search</em></button>
+            </fieldset>
+          </form>
+          %>
+      </div>
+    </section>
+    <div class="hidden-xs">
+        <nav id="mainav"> 
+          <ul class="clear">
+            <%# <li class="active"><a href="index.html">Home</a></li> %>
+            <li><%= link_to 'Apresentação', apresentacao_index_path %></li>
+            <li><%= link_to 'Quartos', quartos_index_path %></li>
+            <li><%= link_to 'Serviços', servicos_index_path %></li>
+            <%# <li><a class="drop" href="#">Quartos</a>
+              <ul>
+                <li><%= link_to 'Solteiro', solteiro_index_path %> <%# </li>
+               <%# <li><%= link_to 'Casal', casal_index_path %> <%# </li>
+                <%#<li><%= link_to 'Personalizados', personalizados_index_path %> <%# </li>
+              <%#</ul>
+            </li>
+            <%#
+            <li><a class="drop" href="#">Dropdown</a>
+              <ul>
+                <li><a href="#">Level 2</a></li>
+                <li><a class="drop" href="#">Level 2 + Drop</a>
+                  <ul>
+                    <li><a href="#">Level 3</a></li>
+                    <li><a href="#">Level 3</a></li>
+                    <li><a href="#">Level 3</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Level 2</a></li>
+              </ul>
+            </li>
+            %>
+            <li><%= link_to 'Reservar', new_reserva_path %></li>
+            <li><%= link_to 'Contato', contato_index_path %></li>
+          </ul>
+        </nav>
+    </div>
+
+  </header>
+</div>    
+
+
+    <div class="hidden-md hidden-lg">
+
+        <nav class="menu-mobile">
+            <ul class="nav navbar-nav">
+                <%# <li class="active"><a href="index.html">Home</a></li> %>
+                <li><%= link_to 'Apresentacao', apresentacao_index_path %></li>
+                <li><%= link_to 'Servicos', servicos_index_path %></li>
+                <li><%= link_to 'Reservar', new_reserva_path %></li>
+                <li><%= link_to 'Contato', contato_index_path %></li>
+            </ul>
+        </nav>
+
+    </div>

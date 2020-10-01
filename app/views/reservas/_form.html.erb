@@ -1,0 +1,95 @@
+<div class="container">
+      <div class="card card-login mx-auto mt-5">
+
+        <div class="card-body">
+
+          <%= form_for(@reserva) do |f| %>
+            <% if @reserva.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@reserva.errors.count, "error") %> prohibited this reserva from being saved:</h2>
+
+                <ul>
+                <% @reserva.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+
+            <div class="form-group">
+              <div class="form-label-group">
+                <%#= f.label :nome %><br>
+                <%= f.text_field :nome, required: "required", class: "form-control", id: "nome_reserva", 
+                    placeholder: "Nome Completo", autofocus: "autofocus" %>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="form-label-group">
+                <%#= f.label :celular %><br>
+                <%= f.text_field :celular, required: "required", class: "form-control", 
+                    placeholder: "Celular", autofocus: "autofocus" %>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="form-label-group">
+                <i>Tem whatsapp?</i>
+                <%= f.select :wpp, [' ', 'Sim', 'Não'], class: "form-control", autofocus: "autofocus" %>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="form-label-group">
+                <%#= f.label :nome %><br>
+                <%= f.text_field :telefone, class: "form-control", 
+                    placeholder: "Telefone Fixo", autofocus: "autofocus" %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form-label-group">
+                <%#= f.label :nome %><br>
+                <%= f.text_field :email, required: "required", class: "form-control", 
+                    placeholder: "E-mail", autofocus: "autofocus" %>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="form-label-group">
+                <%#= f.label :nome %><br>
+                <%= f.text_field :quantidade, required: "required", class: "form-control", 
+                    placeholder: "Nº de pessoas", autofocus: "autofocus" %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form-label-group">
+                <%#= f.label :chekin %><br>
+                <h2>Data da Entrada:</h2>
+                <%= f.date_select :chekin, required: "required", :order => [:day, :month, :year], :start_year => 2018, :end_year => 2030,
+                :class => "input-mini" %>
+               </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-label-group">
+                <h2>Data da Saída:</h2>
+                <%= f.date_select :checkout, required: "required", :order => [:day, :month, :year], :start_year => 2018, :end_year => 2030,
+                :class => "input-mini" %> 
+              </div>
+            </div>
+
+            <div class="actions">
+              <%= f.submit 'Confirmar', :class => 'botao_reserva btn btn-primary btn-block' %>
+            </div>
+          <% end %>
+
+        </div>
+  </div>
+</div>

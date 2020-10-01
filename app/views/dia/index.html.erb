@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dia.each do |dium| %>
+      <tr>
+        <td><%= dium.data %></td>
+        <td><%= link_to 'Show', dium %></td>
+        <td><%= link_to 'Edit', edit_dium_path(dium) %></td>
+        <td><%= link_to 'Destroy', dium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dium', new_dium_path %>

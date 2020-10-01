@@ -1,0 +1,52 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<h1>Reservas</h1>
+<% if admin_signed_in? %>
+Logged in as <strong><%= current_admin.email %></strong>.
+  <%= link_to 'Edit profile', edit_admin_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link' %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Celular</th>
+        <th>Wpp</th>
+        <th>Telefone</th>
+        <th>Email</th>
+        <th>Quantidade</th>
+        <th>Chekin</th>
+        <th>Checkout</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @reservas.each.reverse_each do |reserva| %>
+        <tr>
+          <td><%= reserva.nome %></td>
+          <td><%= reserva.celular %></td>
+          <td><%= reserva.wpp %></td>
+          <td><%= reserva.telefone %></td>
+          <td><%= reserva.email %></td>
+          <td><%= reserva.quantidade %></td>
+          <td><%= reserva.chekin %></td>
+          <td><%= reserva.checkout %></td>
+          <td><%= link_to 'Show', reserva %></td>
+          <td><%= link_to 'Edit', edit_reserva_path(reserva) %></td>
+          <td><%= link_to 'Destroy', reserva, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+
+<% else %>
+  <%= link_to 'Inicio', root_path, :class => 'submit_button btn' %>
+<% end %>
+
+</div>
