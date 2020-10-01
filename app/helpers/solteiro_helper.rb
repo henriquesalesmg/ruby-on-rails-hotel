@@ -1,0 +1,2 @@
+module SolteiroHelper
+end
